@@ -1,0 +1,11 @@
+booking_id,customer_id,booking_date,destination,number_of_passengers,cost_per_passenger
+777,123,12/01/24,Delhi,1,5000
+778,345,13/01/24,Goa,2,4500
+779,678,14/01/24,Kochi,2,
+780,112,15/01/24,Delhi,1,5000
+781,113,16/01/24,Chennai,,3500
+782,114,17/01/24,Kochi,2,5001
+783,115,18/01/24,Delhi,3,4501
+784,116,19/01/24,Chennai,,6001
+785,117,20/01/24,Kochi,2,
+786,118,21/01/24,Delhi,2,3501
