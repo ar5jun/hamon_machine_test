@@ -7,11 +7,10 @@ from upload_to_gcs import upload_dataframe_to_gcs
 
 pd.set_option('display.max_columns', None)
 
-dataframes = []
-
 
 def download_from_source(repo_url, file_paths):
-
+    dataframes = []
+    
     # Loop through each file path
     for file_path in file_paths:
         raw_url = f'{repo_url}/raw/main/{file_path}'
@@ -37,6 +36,7 @@ def download_from_source(repo_url, file_paths):
 
         except Exception as e:
             raise e
+    return dataframes
 
 
 def transform_data(df):
@@ -64,7 +64,7 @@ if __name__ == '__main__':
     file_paths = ['hamon/booking_data.csv', 'hamon/customer_data.csv', 'hamon/destination_data.csv']
 
     # Function to download the csv files from GitHub repo and convert it into dataframes
-    download_from_source(repo_url, file_paths)
+    dataframes = download_from_source(repo_url, file_paths)
 
     # Function to insert the dataframes into a PostgreSQL db
     insert_to_psql(dataframes)
